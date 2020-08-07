@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style='height: 100vh'>
+  <head>
+    <title>Chat app</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body style='height: 100vh'>
+    <div style='height: 100vh' id="container">
+      <div style='height: 20vh' class="toolbar row w-100 pt-1 px-3">
+        <span class="font-weight-bold">Teleprompter</span>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">              
+              <form class="form-inline">
+                Font Size: <input class="d-inline font-input" type="text" /> <button type="button" class="btn btn-secondary font-plus">+</button> <button type="button" class="btn btn-secondary font-minus">-</button>
+                Scroll Speed: <input class="d-inline scroll-input" type="text" /> <button type="button" class="btn btn-secondary scroll-plus">+</button> <button type="button" class="btn btn-secondary scroll-minus">-</button>
+                Scroll: <input class="d-inline scroll-location-input" type="text" />
+                <button class="btn btn-secondary start-button" type="button">Start</button>
+                <button class="btn btn-secondary stop-button" type="button">Stop</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div>
+          <textarea class="w-100 px-3" id="textarea"></textarea>
+          <div class="links">
+            Control this view from this link!: <span class="link-display">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <div style="overflow-y: scroll; height: 80vh" class="bounding-box">
+        <div class="text-display h-75">
+          Sample text lorem ipsum
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/host.js"></script>
+  </body>
+</html>
